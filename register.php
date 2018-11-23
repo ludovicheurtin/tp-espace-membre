@@ -27,8 +27,9 @@ $login = array(
 
 $fp = fopen('logins.csv', 'a+');
 fputcsv($fp, $login);
-
 fclose($fp);
+
+var_dump($fp);
 
 ?><!DOCTYPE html>
 <html lang="fr">
