@@ -11,22 +11,25 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
     if($_POST["pwd"] != $_POST["pwdconf"])  {
         $samepwd = false;
     }
+    if($samepwd == true) {
+        $mail = $_POST["mail"];
+        $pwd = md5($_POST["pwd"]);
+        $login = array(
+            "mail" => $mail,
+            "pwd" => $pwd,
+        );
+
+        $fp = fopen('logins.csv', 'a+');
+        fputcsv($fp, $login);
+        fclose($fp);
+        redirection_registered();
+    }
     if($samepwd == false) {
         $_SESSION["error"] = "Les deux mots de passe ne correspondent pas !";
         redirection_register();
     }
 }
-$mail = $_POST["mail"];
-$pwd = md5($_POST["pwd"]);
-$login = array(
-    "mail" => $mail,
-    "pwd" => $pwd,
-);
 
-$fp = fopen('logins.csv', 'a+');
-fputcsv($fp, $login);
-fclose($fp);
-redirection_registered();
 
 ?><!DOCTYPE html>
 <html lang="fr">
