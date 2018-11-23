@@ -13,5 +13,10 @@
     <header>
         <h1 style="text-align: center">Connexion</h1>
     </header>
+    <form action="" method="post">
+        <p><input type="text" name="mail" placeholder="Adresse e-mail"></p>
+        <p><input type="password" name="pwd" placeholder="Mot de passe"></p>
+        <button type="submit" name="submit">OK</button>
+    </form>
 </body>
 </html>
