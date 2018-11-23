@@ -1,8 +1,4 @@
-<?php
-session_start();
-var_dump($_SESSION["mail"]);
-var_dump($_SESSION["pwd"]);
-?><!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -20,10 +16,14 @@ var_dump($_SESSION["pwd"]);
 			<li><a href="parametres.php">Parametres</a></li>
 		</ul>
 	</nav>
-  <p>Email: <?php echo $_SESSION["mail"] ?></p>
-  <p>Statut du compte: actif</p>
+  <p>Changer l'adresse Email</p>
+  <p>Verifier l'adresse Email</p>
+  <p>Changer le mot de passe</p>
+  <p>Desactiver le compte</p>
 
-  <button type="submit" name="disconnection"><a href="disconnection.php">Déconnexion</a></button>
+  <input class="favorite styled"
+       type="button"
+       value="Déconnexion">
      
 </body>
 
