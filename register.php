@@ -3,6 +3,10 @@ session_start();
 require_once 'libs/functions.php';
 $samepwd = true;
 if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
+    if(empty($_POST["mail"])) {
+        $_SESSION["error"] = "Une adresse mail est requise.";
+        redirection_register();
+    }
     if($_POST["pwd"] != $_POST["pwdconf"])  {
         $samepwd = false;
     }
