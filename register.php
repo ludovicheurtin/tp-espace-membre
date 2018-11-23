@@ -11,9 +11,6 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
     if($_POST["pwd"] != $_POST["pwdconf"])  {
         $samepwd = false;
     }
-    if($samepwd == true) {
-        // Enregistrer informations dans fichier .csv
-    }
     if($samepwd == false) {
         $_SESSION["error"] = "Les deux mots de passe ne correspondent pas !";
         redirection_register();
@@ -29,6 +26,7 @@ $login = array(
 $fp = fopen('logins.csv', 'a+');
 fputcsv($fp, $login);
 fclose($fp);
+redirection_registered();
 
 ?><!DOCTYPE html>
 <html lang="fr">

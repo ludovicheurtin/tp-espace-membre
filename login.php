@@ -29,5 +29,6 @@ fclose($file);
         <p><input type="password" name="pwd" placeholder="Mot de passe"></p>
         <button type="submit" name="submit">OK</button>
     </form>
+    <h2><a href="register.php">Créer un compte</a></h2>
 </body>
 </html>
