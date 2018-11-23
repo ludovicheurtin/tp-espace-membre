@@ -5,12 +5,13 @@ $file = fopen('logins.csv', 'r');
 if(isset($_POST["mail"])) {
     while (($line = fgetcsv($file)) !== FALSE) {
         if($line[0] == $_POST["mail"] && $line[1] == md5($_POST["pwd"])) {
+            $_SESSION["mail"] = $_POST["mail"];
+            $_SESSION["pwd"] = $_POST["pwd"];
             redirection_dashboard();
         }
     }
 }
 fclose($file);
-
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>

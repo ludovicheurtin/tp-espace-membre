@@ -1,3 +1,5 @@
 <?php
-    echo "Wesh bon retour poto bien ou bien ?";
+session_start();
+var_dump($_SESSION["mail"]);
+var_dump($_SESSION["pwd"]);
 ?>
