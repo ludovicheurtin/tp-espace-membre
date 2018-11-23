@@ -18,6 +18,18 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
         redirection_register();
     }
 }
+$mail = $_POST["mail"];
+$pwd =$_POST["pwd"];
+$login = array(
+    "mail" => $mail,
+    "pwd" => $pwd,
+);
+
+$fp = fopen('logins.csv', 'a+');
+fputcsv($fp, $login);
+
+fclose($fp);
+
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -32,7 +44,7 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
         <p><input type="text" name="mail" placeholder="Adresse e-mail"></p>
         <p><input type="password" name="pwd" placeholder="Mot de passe"></p>
         <p><input type="password" name="pwdconf" placeholder="Mot de passe identique"></p>
-        <button type="submit">OK</button>
+        <button type="submit" name="submit">OK</button>
     </form>
 </body>
 </html>
