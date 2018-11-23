@@ -19,7 +19,7 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
     }
 }
 $mail = $_POST["mail"];
-$pwd =$_POST["pwd"];
+$pwd = md5($_POST["pwd"]);
 $login = array(
     "mail" => $mail,
     "pwd" => $pwd,
