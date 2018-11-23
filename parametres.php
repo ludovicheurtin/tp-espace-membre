@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 ?><!DOCTYPE HTML>
 <html>
 <head>
@@ -21,6 +19,5 @@ session_start();
   <p><button type="submit" name="change_pwd">Changer le mot de passe</button></p>
   <p><button type="submit" name="delete_account">Supprimer le compte</button></p>
   <button type="submit" name="disconnection"><a href="disconnection.php">Déconnexion</a></button>   
-</body>
 </body>
 </html>

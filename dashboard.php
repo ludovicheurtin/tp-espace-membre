@@ -2,15 +2,12 @@
 session_start();
 ?><!DOCTYPE HTML>
 <html>
-
 <head>
 	<link rel="stylesheet" type="text/css" href="dashboard.css" />
 	<title>Dashboard</title>
 </head>
-
 <h1>Dashboard</h1>
 <p>Bienvenue sur votre espace membre.</p>
-
 <body>
 	<nav>
 		<ul>
@@ -20,10 +17,7 @@ session_start();
 	</nav>
   <p>Email: <?php echo $_SESSION["mail"] ?></p>
   <p>Statut du compte: actif</p>
-
   <button type="submit" name="disconnection"><a href="disconnection.php">Déconnexion</a></button>
-     
 </body>
-
 </body>
 </html>

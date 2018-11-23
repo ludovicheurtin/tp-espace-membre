@@ -2,7 +2,6 @@
 session_start();
 require_once 'libs/functions.php';
 $samepwd = true;
-
 if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
     if(empty($_POST["mail"])) {
         $_SESSION["error"] = "Une adresse mail est requise.";
@@ -27,7 +26,6 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
                 "mail" => $mail,
                 "pwd" => $pwd,
             );
-
             $fp = fopen('logins.csv', 'a+');
             fputcsv($fp, $login);
             fclose($fp);
@@ -38,8 +36,6 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
         redirection_register();
     }
 }
-
-
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
