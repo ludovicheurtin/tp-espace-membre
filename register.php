@@ -11,18 +11,27 @@ if(isset($_POST["pwd"]) OR isset($_POST["pwdconf"])) {
     if($_POST["pwd"] != $_POST["pwdconf"])  {
         $samepwd = false;
     }
+    $file = fopen('logins.csv', 'r');
     if($samepwd == true) {
-        $mail = $_POST["mail"];
-        $pwd = md5($_POST["pwd"]);
-        $login = array(
-            "mail" => $mail,
-            "pwd" => $pwd,
-        );
+        if(isset($_POST["mail"])) {
+            while (($line = fgetcsv($file)) !== FALSE) {
+                if($line[0] == $_POST["mail"]) {
+                    $_SESSION["error"] = "Cette adresse mail est déjà prise !";
+                    redirection_register();
+                }
+            }
+        }
+            $mail = $_POST["mail"];
+            $pwd = md5($_POST["pwd"]);
+            $login = array(
+                "mail" => $mail,
+                "pwd" => $pwd,
+            );
 
-        $fp = fopen('logins.csv', 'a+');
-        fputcsv($fp, $login);
-        fclose($fp);
-        redirection_registered();
+            $fp = fopen('logins.csv', 'a+');
+            fputcsv($fp, $login);
+            fclose($fp);
+            redirection_registered();
     }
     if($samepwd == false) {
         $_SESSION["error"] = "Les deux mots de passe ne correspondent pas !";
