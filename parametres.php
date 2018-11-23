@@ -17,13 +17,10 @@
 		</ul>
 	</nav>
   <p>Changer l'adresse Email</p>
-  <p>Verifier l'adresse Email</p>
   <p>Changer le mot de passe</p>
-  <p>Desactiver le compte</p>
+  <p>Supprimer le compte</p>
 
-  <input class="favorite styled"
-       type="button"
-       value="Déconnexion">
+  <button type="submit" name="disconnection"><a href="disconnection.php">Déconnexion</a></button>
      
 </body>
 
